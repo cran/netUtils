@@ -1,3 +1,11 @@
+# netUtils 0.8.0
+
+* added `reciprocity_cor()`
+* fixed wrong str print (#5)
+* switched from Simulated Annealing to Genetic Algorithm (#4)
+* added more tests
+* added `sample_lfr()` (#9)
+
 # netUtils 0.7.0   
 
 * fixed documentation 

@@ -7,14 +7,14 @@ IntegerVector sortxy(IntegerVector x, IntegerVector y) {
   IntegerVector idx = seq_along(x) - 1;
   std::sort(idx.begin(), idx.end(), [&](int i, int j){return y[i] < y[j];});
   for(int i=0; i<2;i++){
-    if((y[idx[i]]==y[idx[i+1]]) & (x[idx[i]]>x[idx[i+1]])){
+    if((y[idx[i]]==y[idx[i+1]]) && (x[idx[i]]>x[idx[i+1]])){
       int tmp= idx[i+1];
       idx[i+1]=idx[i];
       idx[i]=tmp;
     }
   }
   for(int i=0; i<2;i++){
-    if((y[idx[i]]==y[idx[i+1]]) & (x[idx[i]]>x[idx[i+1]])){
+    if((y[idx[i]]==y[idx[i+1]]) && (x[idx[i]]>x[idx[i+1]])){
       int tmp= idx[i+1];
       idx[i+1]=idx[i];
       idx[i]=tmp;
@@ -46,7 +46,7 @@ NumericVector triadCensusCol(const arma::sp_mat& A,
   for(int u=0;u<n;++u){
     for(int v=0;v<n;++v){
       for(int w=0;w<n;++w){
-        if((u<v) & (v<w)){
+        if((u<v) && (v<w)){
           code = A(u,v)+2*A(u,w)+4*A(v,u)+8*A(v,w)+16*A(w,u)+32*A(w,v);
           orbits = orbitClasses(code,_);
 
