@@ -1,7 +1,7 @@
-71b82cdc1f78cd63539f08284eaf4ffd *DESCRIPTION
+2d963d772c7c6f0f0eb9b6792c851fc9 *DESCRIPTION
 e7169b5a4594da18e5ad9ba2db89154d *LICENSE
 9986d6e78f9f973ddd36fa7d0dc0944a *NAMESPACE
-2bd86706f53e77522de7dbe5c8567568 *NEWS.md
+36cf3856651179a5324aa86cffb06fd9 *NEWS.md
 3a14204d6d2d659066eca9d3b17e4ad4 *R/RcppExports.R
 fc16a5c26af89a08ef6b5e88f1ef50e0 *R/core_periphery.R
 1f705dc15ddb1a66d2e81db6b5c83480 *R/dyad_census_attr.R
@@ -11,7 +11,7 @@ df7c739b0b351242413df601a015900c *R/graph_structures.R
 7580dbee037518dd5c0bbf8b9f01c97f *R/graphs.R
 2fe95e1f9724079b1103f5084d97b68d *R/lfr_benchmark.R
 8461870b83acf80959d17c3216bb7cc6 *R/netUtils-package.R
-2a0c5908a69e2123d6db33d3ca2b53bf *R/print_igraph.R
+1bf1c4579e796d0a4619ffbb0b691ac1 *R/print_igraph.R
 c5ea5a37acc1aab97cf3bb3719806386 *R/qap.R
 cda6b73019bcd8b801b387d48e9d498c *R/reciprocity.R
 dfb5c8aeb73081e9558868671de09a51 *R/sample_kcores.R
@@ -20,6 +20,7 @@ d358bef387e0fedfddf76cdf89270850 *R/structural_equivalence.R
 872266c375682853343b521e072120fc *R/triad_census_attr.R
 fe9ebb5848cc2edc99bf6bb5f1b43971 *R/utils.R
 f7395d61ceb0ed22f01ed66c71c0ba8e *README.md
+73988208e8b787247d52badf791af13f *inst/CITATION
 8ed9d7fed05daaa314c2a57c020b8674 *man/as_adj_list1.Rd
 285e8c97f908c0bc041c486a0bdb734a *man/as_adj_weighted.Rd
 5e5100de459bdd834db3a5f3f833f942 *man/as_multi_adj.Rd
