@@ -1,3 +1,7 @@
+# netUtils 0.8.4
+
+* fixed M1mac issues
+
 # netUtils 0.8.3
 
 * added more tests #14

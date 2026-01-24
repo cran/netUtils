@@ -1,7 +1,7 @@
-91063a86f4357d94ed4c8c2289f07e58 *DESCRIPTION
+1e115e657a988d2703c87af746ac824f *DESCRIPTION
 e7169b5a4594da18e5ad9ba2db89154d *LICENSE
 72bedfed937b2ab5e2ffd6a98f5e32d9 *NAMESPACE
-fbd7a10ae0cbd2fe70357e6ab76fd2fe *NEWS.md
+0f47d9b6693284f6dfe653578fcdaa0b *NEWS.md
 7605f7c3370039159e59dc36dcbee52a *R/RcppExports.R
 4962765f2f787a23a1f2706665047ffd *R/core_periphery.R
 597203bba0e0bfeae2ac30318a0564db *R/dyad_census_attr.R
@@ -19,7 +19,7 @@ c4eb65a0af4cf7ac0a30cc1b22719051 *R/reciprocity.R
 8291e817c4129555328fd96703cabd87 *R/structural_equivalence.R
 86b0dbb8aa870725552c87a3417b14ca *R/triad_census_attr.R
 1756da27e70a1eaa158c42e84e86751e *R/utils.R
-5601a2dc5bcdcf5a65f687f277bcb7a1 *README.md
+e50334f47547d205fac9bcbd34ce8f83 *README.md
 fe2946a8404125ba9b49ba691dba333a *inst/CITATION
 8ed9d7fed05daaa314c2a57c020b8674 *man/as_adj_list1.Rd
 05f387b327c0b3ad1d448a1556dd7e0b *man/as_adj_weighted.Rd
@@ -45,7 +45,7 @@ f7c92c2bd152440c2e48200629837de7 *man/sample_pa_homophilic.Rd
 3af7ed10fbe2e743042c720df2f68056 *man/structural_equivalence.Rd
 2f6f523543edb9b80065ec52523728bf *man/triad_census_attr.Rd
 c6874cb05e81c711d9c534627b4ec314 *src/RcppExports.cpp
-095d894389a77e34f3ae36654277cd5b *src/lfr.cpp
+2cbe42a69859bc97d704a76fcb84e36d *src/lfr.cpp
 0483e48d92cb9f4150fbb3a52e2dcc5d *src/mse.cpp
 6206a9983fa8156b3b71c38b2a7f4aa1 *src/triad_census_col.cpp
 5c9215d4381e674c2dddec13d64c3802 *tests/testthat.R

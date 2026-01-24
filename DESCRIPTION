@@ -1,6 +1,6 @@
 Package: netUtils
 Title: A Collection of Tools for Network Analysis
-Version: 0.8.3
+Version: 0.8.4
 Authors@R: 
     person("David", "Schoch", email = "david@schochastics.net", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-2952-4812"))
@@ -16,8 +16,9 @@ Imports: Rcpp, igraph (>= 2.0.0), stats
 Suggests: covr, GA, testthat (>= 3.0.0)
 Config/testthat/edition: 3
 NeedsCompilation: yes
-Packaged: 2024-10-10 19:11:30 UTC; david
-Author: David Schoch [aut, cre] (<https://orcid.org/0000-0003-2952-4812>)
+Packaged: 2026-01-23 21:03:18 UTC; david
+Author: David Schoch [aut, cre] (ORCID:
+    <https://orcid.org/0000-0003-2952-4812>)
 Maintainer: David Schoch <david@schochastics.net>
 Repository: CRAN
-Date/Publication: 2024-10-10 19:30:02 UTC
+Date/Publication: 2026-01-24 13:10:02 UTC
