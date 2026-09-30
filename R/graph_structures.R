@@ -1,7 +1,7 @@
 #' @title Adjacency list
 #' @description Create adjacency lists from a graph, either for adjacent edges or for neighboring vertices. This version is faster than the version of igraph but less general.
 #' @param g An igraph object
-#' @details The function does not have a mode parameter and only returns the adjacency list comparable to as_adj_list(g,mode="all)
+#' @details The function does not have a mode parameter and returns the same neighbors as `as_adj_list(g, mode = "all")`, as plain integer vectors. For directed graphs, both in- and out-neighbors are returned.
 #' @return A list of numeric vectors.
 #' @author David Schoch
 #' @examples
@@ -10,14 +10,7 @@
 #' as_adj_list1(g)
 #' @export
 as_adj_list1 <- function(g) {
-    n <- igraph::vcount(g)
-    lapply(seq_len(n), function(i) {
-        x <- g[[i]][[1]]
-        attr(x, "env") <- NULL
-        attr(x, "graph") <- NULL
-        class(x) <- NULL
-        x
-    })
+    lapply(unname(igraph::as_adj_list(g, mode = "all")), as.integer)
 }
 
 #' @title weighted dense adjacency matrix
@@ -34,12 +27,28 @@ as_adj_list1 <- function(g) {
 #' as_adj_weighted(g, attr = "weight")
 #' @export
 as_adj_weighted <- function(g, attr = NULL) {
-    as.matrix(igraph::as_adjacency_matrix(
-        g,
-        attr = attr,
-        type = "both",
-        sparse = TRUE
-    ))
+    as.matrix(adjacency_matrix(g, attr = attr, sparse = TRUE))
+}
+
+# as_adjacency_matrix() with an edge attribute as weights, or unweighted if
+# attr is NULL. igraph >= 3.0.0 replaced the `attr` argument by `weights` and
+# uses the "weight" edge attribute by default.
+adjacency_matrix <- function(g, attr = NULL, sparse = FALSE) {
+    has_weights <- "weights" %in% names(formals(igraph::as_adjacency_matrix))
+    if (is.null(attr)) {
+        if (has_weights) {
+            return(igraph::as_adjacency_matrix(g, type = "both", weights = NA, sparse = sparse))
+        }
+        return(igraph::as_adjacency_matrix(g, type = "both", sparse = sparse))
+    }
+    if (!attr %in% igraph::edge_attr_names(g)) {
+        stop("there is no edge attribute called ", attr, call. = FALSE)
+    }
+    if (has_weights) {
+        igraph::as_adjacency_matrix(g, type = "both", weights = igraph::edge_attr(g, attr), sparse = sparse)
+    } else {
+        igraph::as_adjacency_matrix(g, type = "both", attr = attr, sparse = sparse)
+    }
 }
 
 
@@ -63,7 +72,7 @@ clique_vertex_mat <- function(g) {
     }
     mcl <- igraph::max_cliques(g)
     M <- matrix(0, length(mcl), igraph::vcount(g))
-    for (i in seq_len(length(mcl))) {
+    for (i in seq_along(mcl)) {
         M[i, mcl[[i]]] <- 1
     }
     M
@@ -79,10 +88,8 @@ clique_vertex_mat <- function(g) {
 #' @author David Schoch
 #' @export
 as_multi_adj <- function(g_lst, attr = NULL, sparse = FALSE) {
-    if (!all(unlist(lapply(g_lst, igraph::is_igraph)))) {
+    if (!all(vapply(g_lst, igraph::is_igraph, logical(1)))) {
         stop("all entries of g_lst must be igraph objects")
     }
-    lapply(g_lst, function(x) {
-        igraph::as_adjacency_matrix(x, "both", attr = attr, sparse = sparse)
-    })
+    lapply(g_lst, adjacency_matrix, attr = attr, sparse = sparse)
 }
